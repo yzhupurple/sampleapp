@@ -1,6 +1,26 @@
-@WebApiSample_HostAddress = http://localhost:5287
+@WebApiSample_HostAddress = http://localhost:5287/api
 
+# @no-response-view
 GET {{WebApiSample_HostAddress}}/weatherforecast/
 Accept: application/json
+
+{{
+  test.status(200);
+  test.totalTime(800);
+  test.headerContains("content-type", "json");
+  test.hasResponseBody();
+  // test.hasNoResponseBody();
+}}
+
+###
+GET {{WebApiSample_HostAddress}}/myanother/method1
+Accept: application/json
+
+{{
+  test.status(401);
+  test.totalTime(800);
+  test.headerContains("content-type", "json");
+  test.hasNoResponseBody();
+}}
 
 ###

@@ -485,3 +485,8 @@ $RECYCLE.BIN/
 
 # Visual Studio Code
 .vscode/
+
+# Playwright
+/playwright-report/
+/blob-report/
+/playwright/.cache/
